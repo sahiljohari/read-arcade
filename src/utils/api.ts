@@ -12,32 +12,32 @@ class Api {
     axios.defaults.baseURL = this.baseUrl;
   }
 
-  getList(params: booksListType = { list: "" }) {
-    axios
-      .get(apiUrls.lists, { params: { ...params, "api-key": this.apiKey } })
-      .then((res) => console.log("getList", res))
-      .catch((err) => console.error(err));
+  // Get Best Sellers list. If no date is provided returns the latest list.
+  async getList(params: booksListType = { list: "" }) {
+    return await axios.get(apiUrls.lists, {
+      params: { ...params, "api-key": this.apiKey },
+    });
   }
 
-  getOverview(params: booksOverviewType = {}) {
-    axios
-      .get(apiUrls.overview, { params: { ...params, "api-key": this.apiKey } })
-      .then((res) => console.log("getOverview", res))
-      .catch((err) => console.error(err));
+  // Get top 5 books for all the Best Sellers lists for specified date.
+  async getOverview(params: booksOverviewType = {}) {
+    return await axios.get(apiUrls.overview, {
+      params: { ...params, "api-key": this.apiKey },
+    });
   }
 
-  getBookCategoryNames() {
-    axios
-      .get(apiUrls.names, { params: { "api-key": this.apiKey } })
-      .then((res) => console.log("getBookCategoryNames", res))
-      .catch((err) => console.error(err));
+  // Get Best Sellers list names.
+  async getBookCategoryNames() {
+    return await axios.get(apiUrls.names, {
+      params: { "api-key": this.apiKey },
+    });
   }
 
-  getBookReviews(params: booksReviewsType = {}) {
-    axios
-      .get(apiUrls.reviews, { params: { ...params, "api-key": this.apiKey } })
-      .then((res) => console.log("getBookReviews", res))
-      .catch((err) => console.error(err));
+  // Get book reviews.
+  async getBookReviews(params: booksReviewsType = {}) {
+    return await axios.get(apiUrls.reviews, {
+      params: { ...params, "api-key": this.apiKey },
+    });
   }
 }
 
