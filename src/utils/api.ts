@@ -34,7 +34,7 @@ class Api {
   }
 
   // Get book reviews.
-  async getBookReviews(params: booksReviewsType = {}) {
+  async getBookReviews(params: booksReviewsType = { title: "" }) {
     return await axios.get(apiUrls.reviews, {
       params: { ...params, "api-key": this.apiKey },
     });

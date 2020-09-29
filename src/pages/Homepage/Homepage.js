@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Homepage.module.css";
 
 import { useGetOverview } from "../../store/actions";
+import BookCategory from "../../components/BookCategory/BookCategory";
 
 const Homepage = () => {
   const [overviewList, setOverviewList] = useState([]);
@@ -18,10 +19,7 @@ const Homepage = () => {
     return (
       <div className={styles.root}>
         {overviewList.map((list) => (
-          <div key={list.list_id}>
-            <img src={list.list_image} alt={list.list_name} />
-            <p>{list.display_name}</p>
-          </div>
+          <BookCategory key={list.list_id} listData={list} />
         ))}
       </div>
     );
