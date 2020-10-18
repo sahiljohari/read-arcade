@@ -1,2 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@700&display=swap");
+
 .App {
+  background-color: #151811;
+  color: #ffffff;
+  width: fit-content;
 }

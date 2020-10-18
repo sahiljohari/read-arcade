@@ -1,8 +1,7 @@
 import React from "react";
 import Book from "../../components/Book/Book";
 
-const BookInfo = ({ match, location }) => {
-  const { params } = match;
+const BookInfo = ({ location }) => {
   const { bookData } = location.state;
   return (
     <div>

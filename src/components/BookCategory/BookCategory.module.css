@@ -1,15 +1,38 @@
 .root {
   display: flex;
   flex-direction: column;
+
   margin: 1.25rem 0;
   padding: 1rem;
+}
+
+.categoryHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  font-family: "Abel", sans-serif;
+  font-size: 1.5rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 5;
+}
+
+.link:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 .books {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  flex-grow: 0;
+  flex-wrap: wrap;
 }
 
 .books img {
-  transform: scale(0.75);
+  transform: scale(0.65);
 }

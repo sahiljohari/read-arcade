@@ -5,7 +5,10 @@ import styles from "./BookCategory.module.css";
 const BookCategory = ({ listData }) => {
   return (
     <div className={styles.root}>
+      <div className={styles.categoryHeader}>
       <p>{listData.display_name}</p>
+      <Link className={styles.link} to={`/bestsellers/${listData.list_name_encoded}`}>See more</Link>
+      </div>
       <div className={styles.books}>
         {listData.books.map((book, i) => (
           <Link
@@ -20,7 +23,7 @@ const BookCategory = ({ listData }) => {
             <img src={book.book_image} alt={book.author} />
           </Link>
         ))}
-        <Link to={`/bestsellers/${listData.list_name_encoded}`}>See more</Link>
+        
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+.root {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  min-height: 580px;
+  overflow: hidden;
+}
+
+.bannerChildren {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0;
+}

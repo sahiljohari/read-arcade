@@ -3,6 +3,8 @@ import styles from "./Homepage.module.css";
 
 import { useGetOverview } from "../../store/actions";
 import BookCategory from "../../components/BookCategory/BookCategory";
+import Banner from "../../components/Banner/Banner";
+import bannerImg from '../../assets/images/home-banner.jpg';
 
 const Homepage = () => {
   const [overviewList, setOverviewList] = useState([]);
@@ -18,8 +20,15 @@ const Homepage = () => {
   else {
     return (
       <div className={styles.root}>
-        {overviewList.map((list) => (
-          <BookCategory key={list.list_id} listData={list} />
+        <Banner bgUrl={bannerImg}>
+          <h2 className={styles.brand}>READ ARCADE</h2>
+          <h4 className={styles.subtitle}>Explore the best selling books</h4>
+        </Banner>
+        {overviewList.map((list, i) => (
+          <div key={list.list_id}>
+            <BookCategory  listData={list} />
+            {i !== overviewList.length - 1 && <hr />}
+          </div>
         ))}
       </div>
     );
