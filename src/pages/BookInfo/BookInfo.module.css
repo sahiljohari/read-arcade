@@ -1,0 +1,8 @@
+.root {
+}
+
+.otherBooks {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}

@@ -26,7 +26,7 @@ const Homepage = () => {
         </Banner>
         {overviewList.map((list, i) => (
           <div key={list.list_id}>
-            <BookCategory  listData={list} />
+            <BookCategory name={list.display_name} encodedName={list.list_name_encoded} books={list.books} />
             {i !== overviewList.length - 1 && <hr />}
           </div>
         ))}
